@@ -18,8 +18,8 @@ from pymodaq.daq_utils.scanner import ScanParameters
 
 from pyqtgraph.parametertree import Parameter, ParameterTree
 import pyqtgraph.parametertree.parameterTypes as pTypes
-import pymodaq.daq_utils.custom_parameter_tree as custom_tree
-
+import pymodaq.daq_utils.parameter.pymodaq_ptypes
+from pymodaq.daq_utils.parameter.utils import iter_children
 from pymodaq_plugins_piezoconcept.hardware.piezoconcept.piezoconcept import PiezoConcept, Position, Time
 from pymodaq_plugins_picoquant.daq_viewer_plugins.plugins_1D.daq_1Dviewer_TH260 import DAQ_1DViewer_TH260, T3Reader
 import time
@@ -90,7 +90,7 @@ class DAQ_NDViewer_FLIM_TH260_PiezoConcept(DAQ_1DViewer_TH260):
 
     def commit_settings(self, param):
 
-        if param.name() not in custom_tree.iter_children(self.settings.child(('stage_settings'))):
+        if param.name() not in iter_children(self.settings.child(('stage_settings')), []):
             super().commit_settings(param)
 
         else:
@@ -104,7 +104,7 @@ class DAQ_NDViewer_FLIM_TH260_PiezoConcept(DAQ_1DViewer_TH260):
                 self.emit_status(ThreadCommand('show_scanner'))
                 param.setValue(False)
 
-            elif param.name() in custom_tree.iter_children(self.settings.child('stage_settings', 'move_at'), []):
+            elif param.name() in iter_children(self.settings.child('stage_settings', 'move_at'), []):
                 pos_x = self.settings.child('stage_settings', 'move_at', 'move_at_x').value()
                 pos_y = self.settings.child('stage_settings', 'move_at', 'move_at_y').value()
                 self.move_at_navigator(pos_x, pos_y)
