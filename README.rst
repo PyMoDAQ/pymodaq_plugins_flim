@@ -1,12 +1,31 @@
-# PyMoDAQ Plugins
+pymodaq_plugins_flim (Fluorescence Lifetime Imaging Microscopy)
+###############################################################
 
-PyMoDAQ, Modular Data Acquisition with Python, is a set of **python** modules used to perform automated measurements. 
+.. image:: https://img.shields.io/pypi/v/pymodaq_plugins_flim.svg
+   :target: https://pypi.org/project/pymodaq_plugins_flim/
+   :alt: Latest Version
 
-This repository contains a set of PyMoDAQ plugins for FLIM Measurements (Fluorescence Lifetime Imaging Microscopy)
-(using a conjugation of Time-Correlated Single Photon Counting (TSCPC) and xy stages)
+.. image:: https://readthedocs.org/projects/pymodaq/badge/?version=latest
+   :target: https://pymodaq.readthedocs.io/en/stable/?badge=latest
+   :alt: Documentation Status
 
-For an exhaustive list of the available plugins, see https://github.com/CEMES-CNRS/pymodaq_plugin_manager/blob/main/pymodaq_plugin_manager/doc/PluginList.md
+.. image:: https://github.com/CEMES-CNRS/pymodaq_plugins_flim/workflows/Upload%20Python%20Package/badge.svg
+    :target: https://github.com/CEMES-CNRS/pymodaq_plugins_flim
 
-GitHub repo: https://github.com/CEMES-CNRS
+Set of PyMoDAQ plugins for Fluorescence Lifetime Imaging Microscopy. Current instruments are using Picoquant time to
+digital counting card and piezoconcept XY piezo stage
 
-Documentation: http://pymodaq.cnrs.fr/
+
+Authors
+=======
+
+* Sebastien J. Weber
+
+Instruments
+===========
+Below is the list of instruments included in this plugin
+
+ViewerND
+++++++++
+
+* **FLIM**: FLIM using piezoconcept XY stage and picoquant timeharp TH260"
