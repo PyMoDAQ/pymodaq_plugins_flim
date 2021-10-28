@@ -6,8 +6,8 @@ scikit-image : to correct for scanner drifts in quick FLIM acquisition
 
 
 
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import QThread, pyqtSlot, QObject, pyqtSignal
+from qtpy import QtWidgets
+from qtpy.QtCore import QThread, Slot, QObject, Signal
 import numpy as np
 import os
 from easydict import EasyDict as edict
@@ -72,8 +72,8 @@ class DAQ_NDViewer_FLIM_TH260_PiezoConcept(DAQ_1DViewer_TH260):
         utility_classes.DAQ_Viewer_base
     """
     params = DAQ_1DViewer_TH260.params + stage_params
-    stop_scanner = pyqtSignal()
-    start_tttr_scan = pyqtSignal()
+    stop_scanner = Signal()
+    start_tttr_scan = Signal()
 
     def __init__(self, parent=None, params_state=None):
 
@@ -226,7 +226,7 @@ class DAQ_NDViewer_FLIM_TH260_PiezoConcept(DAQ_1DViewer_TH260):
             self.status.initialized = False
             return self.status
 
-    @pyqtSlot(ScanParameters)
+    @Slot(ScanParameters)
     def update_scanner(self, scan_parameters):
         self.scan_parameters = scan_parameters
         self.x_axis = self.scan_parameters.axes_unique[0]
@@ -263,7 +263,7 @@ class DAQ_NDViewer_FLIM_TH260_PiezoConcept(DAQ_1DViewer_TH260):
             self.move_abs(0, 'X')
             self.move_abs(0, 'Y')
 
-    @pyqtSlot(float, float)
+    @Slot(float, float)
     def move_at_navigator(self, posx, posy):
         self.move_abs(posx, 'X')
         self.move_abs(posy, 'Y')
