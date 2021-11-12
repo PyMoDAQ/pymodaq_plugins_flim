@@ -34,22 +34,22 @@ port = 'COM6' if 'COM6' in ports else ports[0] if len(ports) > 0 else ''
 
 stage_params = [{'title': 'Stage Settings:', 'name': 'stage_settings', 'type': 'group', 'expanded': True, 'children': [
                     {'title': 'Show Navigator:', 'name': 'show_navigator', 'type': 'bool', 'value': False},
-                    {'title': 'Stage Type:', 'name': 'stage_type', 'type': 'list', 'value': 'PiezoConcept', 'values': ['PiezoConcept']},
+                    {'title': 'Stage Type:', 'name': 'stage_type', 'type': 'list', 'value': 'PiezoConcept', 'limits': ['PiezoConcept']},
                     {'title': 'Controller Info:', 'name': 'controller_id', 'type': 'text', 'value': '', 'readonly': True},
-                    {'title': 'COM Port:', 'name': 'com_port', 'type': 'list', 'values': ports, 'value': port},
+                    {'title': 'COM Port:', 'name': 'com_port', 'type': 'list', 'limits': ports, 'value': port},
                     {'title': 'Time interval (ms):', 'name': 'time_interval', 'type': 'int', 'value': 20},
                     {'title': 'Move at:', 'name': 'move_at', 'type': 'group', 'expanded': True, 'children': [
                         {'title': 'X pos (µm):', 'name': 'move_at_x', 'type': 'float', 'value': 0},
                         {'title': 'Y pos (µm):', 'name': 'move_at_y', 'type': 'float', 'value': 0},
                         ]},
                     {'title': 'Stage X:', 'name': 'stage_x', 'type': 'group', 'expanded': True, 'children': [
-                        {'title': 'Axis:', 'name': 'stage_x_axis', 'type': 'list', 'value': 'Y', 'values': ['X', 'Y']},
-                        {'title': 'Direction:', 'name': 'stage_x_direction', 'type': 'list', 'value': 'Inverted', 'values': ['Normal', 'Inverted']},
+                        {'title': 'Axis:', 'name': 'stage_x_axis', 'type': 'list', 'value': 'Y', 'limits': ['X', 'Y']},
+                        {'title': 'Direction:', 'name': 'stage_x_direction', 'type': 'list', 'value': 'Inverted', 'limits': ['Normal', 'Inverted']},
                         {'title': 'Offset (µm):', 'name': 'offset_x', 'type': 'float', 'value': 100},
                         ]},
                     {'title': 'Stage Y:', 'name': 'stage_y', 'type': 'group', 'expanded': True, 'children': [
-                         {'title': 'Axis:', 'name': 'stage_y_axis', 'type': 'list', 'value': 'X', 'values': ['X', 'Y']},
-                         {'title': 'Direction:', 'name': 'stage_y_direction', 'type': 'list', 'value': 'Normal', 'values': ['Normal', 'Inverted']},
+                         {'title': 'Axis:', 'name': 'stage_y_axis', 'type': 'list', 'value': 'X', 'limits': ['X', 'Y']},
+                         {'title': 'Direction:', 'name': 'stage_y_direction', 'type': 'list', 'value': 'Normal', 'limits': ['Normal', 'Inverted']},
                          {'title': 'Offset (µm):', 'name': 'offset_y', 'type': 'float', 'value': 100},
                         ]},
 
