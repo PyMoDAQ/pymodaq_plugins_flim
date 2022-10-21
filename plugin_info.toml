@@ -2,7 +2,7 @@
 
 [plugin-info]
 SHORT_PLUGIN_NAME = 'flim'  #for instance daqmx
-package-url = 'https://github.com/CEMES-CNRS/pymodaq_plugins_flim' #to modify
+package-url = 'https://github.com/PyMoDAQ/pymodaq_plugins_flim' #to modify
 description = 'Set of PyMoDAQ plugins for FLIM Measurements (Fluorescence Lifetime Imaging Microscopy) (using a conjugation of Time-Correlated Single Photon Counting (TSCPC) and xy stages)'
 
 author = 'Sébastien Weber'

@@ -9,8 +9,8 @@ pymodaq_plugins_flim (Fluorescence Lifetime Imaging Microscopy)
    :target: https://pymodaq.readthedocs.io/en/stable/?badge=latest
    :alt: Documentation Status
 
-.. image:: https://github.com/CEMES-CNRS/pymodaq_plugins_flim/workflows/Upload%20Python%20Package/badge.svg
-    :target: https://github.com/CEMES-CNRS/pymodaq_plugins_flim
+.. image:: https://github.com/PyMoDAQ/pymodaq_plugins_flim/workflows/Upload%20Python%20Package/badge.svg
+    :target: https://github.com/PyMoDAQ/pymodaq_plugins_flim
 
 Set of PyMoDAQ plugins for Fluorescence Lifetime Imaging Microscopy. Current instruments are using Picoquant time to
 digital counting card and piezoconcept XY piezo stage
